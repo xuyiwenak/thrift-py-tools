@@ -38,7 +38,7 @@ function read_dir(){
                 extension=${file##*.}
                 if [[ ${extension} == "thrift" ]]
                 then
-                    docker run --rm -it -v $PWD:/data ${IMG} thrift -o /data/$2 --gen $2 /data/protos/${file}
+                    docker run --rm -it -v $PWD:/data ${IMG} thrift -o /data/$2 --gen $2 /data/$1/${file}
                 fi
             fi
         done
